@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Japanese.Views.StatsPage"
              BackgroundColor="#363636"
-             x:Class="Japanese.Views.SettingPage"
-             Title="Налаштування">
+             Title="Статистика">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Ще не зробив ;)"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

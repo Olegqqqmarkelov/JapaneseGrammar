@@ -16,15 +16,13 @@
     -->
 
     <Shell.Resources>
-        
-
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="white" />
                 <Setter Property="Shell.ForegroundColor" Value="#505050" />
                 <Setter Property="Shell.TitleColor" Value="#fff" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#858585" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="#505050" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="#505050"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#858585"/>
@@ -84,19 +82,21 @@
             <Grid BackgroundColor="#505050"
                   HeightRequest="100"
                   >
-
-                <Label Text="Японська граматика"
-                       TextColor="White"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       FontSize="30"/>
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Японська граматика"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="30"/>
+                </StackLayout>
+                <BoxView VerticalOptions="End" HeightRequest="1" Color="White" IsVisible="{Binding IsSeparatorVisible}"/>
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
     <FlyoutItem Icon="icon_main.png"
-                Title="Головна"
+                Title="Головне"
                 FlyoutDisplayOptions="AsSingleItem">
         <Tab Shell.BackgroundColor="#505050" Icon="icon_main40.png"
              Title="Головна">
@@ -104,34 +104,34 @@
         </Tab>
         <Tab Shell.BackgroundColor="#505050" Icon="icon_favorite40.png"
              Title="Улюблене">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:FavoritePage}" />
         </Tab>
         <Tab Shell.BackgroundColor="#505050" Icon="icon_stats40.png"
              Title="Статистика">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:StatsPage}" />
         </Tab>
     </FlyoutItem>
 
     <FlyoutItem  Title="Налаштування" Icon="icon_setting.png">
-        <ShellContent Route="SettingPage" ContentTemplate="{DataTemplate local:SettingPage}" />
+        <ShellContent Shell.BackgroundColor="#505050" Route="SettingPage" ContentTemplate="{DataTemplate local:SettingPage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Оцінити" Icon="icon_like30.png">
-        <ShellContent Route="SettingPage" ContentTemplate="{DataTemplate local:SettingPage}" />
+        <ShellContent Shell.BackgroundColor="#505050" ContentTemplate="{DataTemplate local:BrowserGitHub}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Написати звіт" Icon="icon_gmail30.png">
-        <ShellContent Route="SettingPage" ContentTemplate="{DataTemplate local:SettingPage}" />
+        <ShellContent Shell.BackgroundColor="#505050" Route="SettingPage" ContentTemplate="{DataTemplate local:SendReportPage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Про додаток" Icon="icon_about.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Shell.BackgroundColor="#505050" Route="ItemsPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
 
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>
             <StackLayout>
-                <Label Text="Beta0.01"
+                <Label Text="2022р."
                        TextColor="GhostWhite"
                        FontAttributes="Bold"
                        HorizontalOptions="Center" />

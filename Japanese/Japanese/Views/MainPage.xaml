@@ -9,10 +9,75 @@
             HasShadow="True"
             IsClippedToBounds="True"
             BackgroundColor="#505050" Margin="30, 25, 30, 25">
-            <StackLayout >
-                <Label Text="Welcome to Xamarin.Forms!"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Grid HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout
+                        Grid.Column="0" Grid.Row="0" >
+                        <Button Text="5" 
+                                BorderRadius="10"
+                                FontSize="100"
+                                HeightRequest="125"
+                                BackgroundColor="#FFC700"
+                                />
+
+                        <Label Text="JLPT N5" 
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0" >
+                        <Button Text="4" 
+                                BorderRadius="10"
+                                FontSize="100"
+                                HeightRequest="125"
+                                BackgroundColor="#FFC700"
+                                />
+                        <Label Text="JLPT N4" 
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="0" Grid.Row="1">
+                        <Button Text="3" 
+                                BorderRadius="10"
+                                FontSize="100"
+                                HeightRequest="125"
+                                BackgroundColor="#FFC700"
+                                />
+                        <Label Text="JLPT N3" 
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Column="1" Grid.Row="1">
+                        <Button Text="2" 
+                                BorderRadius="10"
+                                FontSize="100"
+                                HeightRequest="125"
+                                BackgroundColor="#FFC700"
+                                />
+                        <Label Text="JLPT N2" 
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="0" Grid.Row="2"
+                                 Grid.ColumnSpan="2">
+                        <Button Text="1" 
+                                BorderRadius="10"
+                                FontSize="100"
+                                HeightRequest="125"
+                                BackgroundColor="#FFC700"
+                                />
+                        <Label Text="JLPT N3" 
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
             </StackLayout>
         </Frame>
     </ContentPage.Content>

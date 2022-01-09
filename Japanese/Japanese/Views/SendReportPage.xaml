@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Japanese.Views.SendReportPage"
+             Title="Написання звіту">
+    <ContentPage.Content>
+        <Frame CornerRadius="5" 
+            HasShadow="True"
+            IsClippedToBounds="True"
+            BackgroundColor="#505050" Margin="30, 25, 30, 25">
+            <StackLayout Margin="0,0,0,20">
+                <Entry Placeholder="Короткий зміст" MaxLength="150" x:Name="entryShortText"/>
+                <Editor Placeholder="Максимальна кількість символів 750"
+                        MinimumHeightRequest="50"
+                        HeightRequest="10000"
+                        x:Name="entryLongText"
+                        MaxLength="750"/>
+                <Button Text="Відправити"
+                        HorizontalOptions="Center"
+                        VerticalOptions="EndAndExpand"
+                        Clicked="Button_Clicked" />
+
+
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

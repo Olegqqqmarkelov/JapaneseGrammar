@@ -16693,6 +16693,9 @@ namespace Japanese.Droid
 			// aapt resource value: 0x7F070099
 			public const int xamarin_logo = 2131165337;
 			
+			// aapt resource value: 0x7F07009A
+			public const int YellowCube = 2131165338;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
