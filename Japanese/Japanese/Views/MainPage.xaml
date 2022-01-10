@@ -28,6 +28,7 @@
                                 FontSize="100"
                                 HeightRequest="125"
                                 BackgroundColor="#FFC700"
+                                Clicked="Button_Clicked"
                                 />
 
                         <Label Text="JLPT N5" 
@@ -40,6 +41,7 @@
                                 FontSize="100"
                                 HeightRequest="125"
                                 BackgroundColor="#FFC700"
+                                Clicked="Button_Clicked"
                                 />
                         <Label Text="JLPT N4" 
                                HorizontalOptions="Center"/>
@@ -51,6 +53,7 @@
                                 FontSize="100"
                                 HeightRequest="125"
                                 BackgroundColor="#FFC700"
+                                Clicked="Button_Clicked"
                                 />
                         <Label Text="JLPT N3" 
                                HorizontalOptions="Center"/>
@@ -62,6 +65,7 @@
                                 FontSize="100"
                                 HeightRequest="125"
                                 BackgroundColor="#FFC700"
+                                Clicked="Button_Clicked"
                                 />
                         <Label Text="JLPT N2" 
                                HorizontalOptions="Center"/>
@@ -73,8 +77,9 @@
                                 FontSize="100"
                                 HeightRequest="125"
                                 BackgroundColor="#FFC700"
+                                Clicked="Button_Clicked"
                                 />
-                        <Label Text="JLPT N3" 
+                        <Label Text="JLPT N1" 
                                HorizontalOptions="Center"/>
                     </StackLayout>
                 </Grid>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Japanese.Views.JLPT5"
+             Title="JLPT N5"
+             BackgroundColor="#363636">
+    <ContentPage.Content>
+        <Frame CornerRadius="5" 
+            HasShadow="True"
+            IsClippedToBounds="True"
+            BackgroundColor="#505050" Margin="30, 25, 30, 25">
+            <StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
