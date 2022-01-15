@@ -1,35 +1,76 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Japanese.Models;
+using Japanese;
 using SQLite;
 
 namespace Japanese.Data
 {
     public class Database
     {
-        readonly SQLiteAsyncConnection _database;
-        private string v;
+        public SQLiteAsyncConnection database;
 
-        public Database(string v)
+        public Database(string connectionString)
         {
-            this.v = v;
+            database = new SQLiteAsyncConnection(connectionString);
+
+            database.CreateTableAsync<ExamleModel>().Wait();
+            database.CreateTableAsync<Item>().Wait();
+
+            CreateTable();
         }
 
-        public Task<List<Item>> GetAllItemAsync()
+        public void CreateTable()
         {
-            return _database.Table<Item>().ToListAsync();
+
+            ExamleModel example = new ExamleModel()
+            {
+                TextRomace = "asdsadsa",
+                TextJapanese = "asdasdsa",
+                TextTranslate = "asdasdas"
+            };
+
+            Item item1 = new Item()
+            {
+                Jplt = 1,
+                TextJapanese = "12",
+                ShortText = "asdas",
+                ExamlesText = new List<ExamleModel>(){
+                        new ExamleModel()
+                        {
+                            TextRomace = "asdsadsa",
+                            TextJapanese = "asdasdsa",
+                            TextTranslate = "asdasdas",
+                        }, 
+                    },
+                TextExplanation = "asdasdasdasdas",
+                isFavorite = false
+            };
+
+            SavePersonAsync(
+                item1
+            );
+        }
+
+        public async Task<List<Item>> GetAllItemAsync(int number)
+        {
+            return await database.Table<Item>().
+                                Where(i => i.Jplt == number).
+                                ToListAsync();
         }
 
         public Task<Item> GetItemAsync(int id)
         {
-            return _database.Table<Item>().
+            return database.Table<Item>().
                                 Where(i => i.ID == id).
                                 FirstOrDefaultAsync();
         }
 
         public Task<int> SavePersonAsync(Item item)
         {
-            return _database.InsertAsync(item);
+            return database.InsertAsync(item);
         }
+
+
     }
 }

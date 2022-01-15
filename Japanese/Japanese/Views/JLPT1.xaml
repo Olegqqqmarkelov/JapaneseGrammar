@@ -9,9 +9,15 @@
             HasShadow="True"
             IsClippedToBounds="True"
             BackgroundColor="#505050" Margin="30, 25, 30, 25">
-            <StackLayout>
-                
-            </StackLayout>
+            <ListView x:Name="itemsList" ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <Label Text="{Binding TextJapanese}" FontSize="Medium" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Frame>
     </ContentPage.Content>
 </ContentPage>

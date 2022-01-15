@@ -2,15 +2,17 @@
 using System;
 using Japanese.Data;
 using Xamarin.Forms;
+using Japanese.Models;
 using Xamarin.Forms.Xaml;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Japanese
 {
     public partial class App : Application
     {
-        static Database database;
-
+        public const string DATABASE_NAME = "items5.db";
+        public static Database database;
         public static Database Database
         {
             get
@@ -18,9 +20,8 @@ namespace Japanese
                 if (database == null)
                 {
                     database = new Database(
-                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), 
-                        "itemsData.db3")
-                        );
+                    Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
                 }
                 return database;
             }
@@ -29,6 +30,7 @@ namespace Japanese
         public App()
         {
             InitializeComponent();
+
 
             MainPage = new AppShell();
         }
@@ -44,5 +46,6 @@ namespace Japanese
         protected override void OnResume()
         {
         }
+
     }
 }
