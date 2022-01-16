@@ -17,7 +17,6 @@ namespace Japanese.Data
             database.CreateTableAsync<ExamleModel>().Wait();
             database.CreateTableAsync<Item>().Wait();
 
-            CreateTable();
         }
 
         public void CreateTable()
@@ -35,6 +34,7 @@ namespace Japanese.Data
                 Jplt = 1,
                 TextJapanese = "12",
                 ShortText = "asdas",
+                TextFormation =  "фівіфлргфіл",
                 ExamlesText = new List<ExamleModel>(){
                         new ExamleModel()
                         {
@@ -43,7 +43,7 @@ namespace Japanese.Data
                             TextTranslate = "asdasdas",
                         }, 
                     },
-                TextExplanation = "asdasdasdasdas",
+                TextExplanation = "aksdkhka usgufkask fgkagfk gaskgfkagfagkflas flaglfiadsadsad lsgfaasdsadas",
                 isFavorite = false
             };
 

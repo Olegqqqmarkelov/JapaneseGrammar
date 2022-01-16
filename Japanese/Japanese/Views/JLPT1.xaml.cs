@@ -26,5 +26,12 @@ namespace Japanese.Views
 
             itemsList.ItemsSource = await App.Database.GetAllItemAsync(1);
         }
+
+        private async void OnSelectedItem(object sender, SelectedItemChangedEventArgs e)
+        {
+            Item item = (Item)e.SelectedItem;
+
+            Navigation.PushAsync(new DetailItemPage(item));
+        }
     }
 }

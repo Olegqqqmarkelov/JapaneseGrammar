@@ -9,11 +9,18 @@
             HasShadow="True"
             IsClippedToBounds="True"
             BackgroundColor="#505050" Margin="30, 25, 30, 25">
-            <ListView x:Name="itemsList" ItemsSource="{Binding}">
+            <ListView x:Name="itemsList" HasUnevenRows="True" SeparatorVisibility="None" Margin="-20,-25,-20,-25" ItemsSource="{Binding}"
+                      SelectionMode="Single" ItemSelected="OnSelectedItem">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                                <Label Text="{Binding TextJapanese}" FontSize="Medium" />
+                            <Frame BackgroundColor="#858585" Margin="0,5,0,5">
+                                <StackLayout Orientation="Horizontal"
+                                         >
+                                    <Label Text="{Binding TextJapanese}" VerticalTextAlignment="Center" FontSize="Large" />
+                                    <Label Text="{Binding ShortText}" VerticalTextAlignment="Center" FontSize="15" />
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

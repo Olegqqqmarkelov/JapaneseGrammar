@@ -13,6 +13,7 @@ namespace Japanese.Models
         public byte Jplt { get; set; }
         public string TextJapanese { get; set; }
         public string ShortText { get; set; }
+        public string TextFormation { get; set; }
         public string TextExplanation { get; set; }
         [OneToMany]
         public List<ExamleModel> ExamlesText { get; set; }

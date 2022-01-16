@@ -5,10 +5,19 @@
              BackgroundColor="#363636"
              Title="Статистика">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Frame CornerRadius="5" 
+            HasShadow="True"
+            IsClippedToBounds="True"
+            BackgroundColor="#505050" Margin="30, 25, 30, 25">
+            <StackLayout Margin="0,0,0,0">
+                <Label Text="На данний момент не доступно"
+                    FontSize="32"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+           
     </ContentPage.Content>
 </ContentPage>

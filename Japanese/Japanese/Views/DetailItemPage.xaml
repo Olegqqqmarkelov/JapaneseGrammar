@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Japanese.Views.DetailItemPage"
+             BackgroundColor="#363636">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                HeightRequest="60"
+                HasShadow="True"
+                IsClippedToBounds="True"
+                BackgroundColor="#505050" Margin="30, 25, 30, 25">
+                <StackLayout Margin="0,0,0,0">
+                    <Label Text="Формування:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
+                    <Label x:Name="TextFormation" HorizontalOptions="Start" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                HeightRequest="120"
+                HasShadow="True"
+                IsClippedToBounds="True"
+                BackgroundColor="#505050" Margin="30, -20, 30, 25">
+                <StackLayout Margin="0,0,0,0">
+                    <Label Text="Пояснення:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
+                    <Label x:Name="ShortText" HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
+                    <Label x:Name="TextExplanation" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontAttributes="Italic"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                HeightRequest="230"
+                HasShadow="True"
+                IsClippedToBounds="True"
+                BackgroundColor="#505050" Margin="30, -20, 30, 25">
+                <StackLayout Margin="0,0,0,0">
+                    <Label Text="Приклади:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
