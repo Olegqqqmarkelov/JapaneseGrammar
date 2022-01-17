@@ -17,6 +17,7 @@ namespace Japanese.Data
             database.CreateTableAsync<ExamleModel>().Wait();
             database.CreateTableAsync<Item>().Wait();
 
+            //CreateTable();
         }
 
         public void CreateTable()
@@ -41,7 +42,19 @@ namespace Japanese.Data
                             TextRomace = "asdsadsa",
                             TextJapanese = "asdasdsa",
                             TextTranslate = "asdasdas",
-                        }, 
+                        },
+                        new ExamleModel()
+                        {
+                            TextRomace = "asdsadsa",
+                            TextJapanese = "asdasdsa",
+                            TextTranslate = "asdasdas",
+                        },
+                        new ExamleModel()
+                        {
+                            TextRomace = "asdsadsa",
+                            TextJapanese = "asdasdsa",
+                            TextTranslate = "asdasdas",
+                        },
                     },
                 TextExplanation = "aksdkhka usgufkask fgkagfk gaskgfkagfagkflas flaglfiadsadsad lsgfaasdsadas",
                 isFavorite = false
@@ -50,6 +63,13 @@ namespace Japanese.Data
             SavePersonAsync(
                 item1
             );
+        }
+
+        public async Task<List<ExamleModel>> GetExamleModel(int Id)
+        {
+            return await database.Table<ExamleModel>().
+                Where(i => i.ItemID == Id).
+                ToListAsync();
         }
 
         public async Task<List<Item>> GetAllItemAsync(int number)

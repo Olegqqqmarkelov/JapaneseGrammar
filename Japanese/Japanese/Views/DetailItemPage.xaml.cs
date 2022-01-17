@@ -21,6 +21,14 @@ namespace Japanese.Views
             TextExplanation.Text = item.TextExplanation;
             ShortText.Text = item.ShortText;
             TextFormation.Text = item.TextFormation;
+
+            GetExa(item.ID);
+        }
+
+        public async void GetExa(int ID)
+        {
+            base.OnAppearing();
+            itemsExampleList.ItemsSource = await App.Database.GetExamleModel(ID);
         }
     }
 }

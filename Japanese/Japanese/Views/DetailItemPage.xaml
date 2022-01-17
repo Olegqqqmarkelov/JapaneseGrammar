@@ -35,6 +35,21 @@
                 BackgroundColor="#505050" Margin="30, -20, 30, 25">
                 <StackLayout Margin="0,0,0,0">
                     <Label Text="Приклади:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                    <ListView x:Name="itemsExampleList" HeightRequest="180" ItemsSource="{Binding ExamleModel}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical"
+                                        >
+                                        <Label Text="{Binding TextRomace}" FontSize="12" />
+                                        <Label Text="{Binding TextJapanese}" FontSize="12" />
+                                        <Label Text="{Binding TextTranslate}" FontSize="12" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </Frame>
         </StackLayout>
