@@ -15,8 +15,7 @@ namespace Japanese.Models
         public string ShortText { get; set; }
         public string TextFormation { get; set; }
         public string TextExplanation { get; set; }
-        [OneToMany]
-        public List<ExamleModel> ExamlesText { get; set; }
+        public int ExamlesTextId { get; set; }
         public bool isFavorite { get; set; }
     }
 }

@@ -14,7 +14,6 @@ namespace Japanese.Models
         public string TextJapanese { get; set; }
         public string TextTranslate { get; set; }
 
-        [ForeignKey(typeof(Item))]
         public int ItemID { get; set; }
     }
 }

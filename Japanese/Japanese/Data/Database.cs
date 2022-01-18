@@ -25,9 +25,11 @@ namespace Japanese.Data
 
             ExamleModel example = new ExamleModel()
             {
+
                 TextRomace = "asdsadsa",
                 TextJapanese = "asdasdsa",
-                TextTranslate = "asdasdas"
+                TextTranslate = "asdasdas",
+                ItemID = 1
             };
 
             Item item1 = new Item()
@@ -35,41 +37,26 @@ namespace Japanese.Data
                 Jplt = 1,
                 TextJapanese = "12",
                 ShortText = "asdas",
-                TextFormation =  "фівіфлргфіл",
-                ExamlesText = new List<ExamleModel>(){
-                        new ExamleModel()
-                        {
-                            TextRomace = "asdsadsa",
-                            TextJapanese = "asdasdsa",
-                            TextTranslate = "asdasdas",
-                        },
-                        new ExamleModel()
-                        {
-                            TextRomace = "asdsadsa",
-                            TextJapanese = "asdasdsa",
-                            TextTranslate = "asdasdas",
-                        },
-                        new ExamleModel()
-                        {
-                            TextRomace = "asdsadsa",
-                            TextJapanese = "asdasdsa",
-                            TextTranslate = "asdasdas",
-                        },
-                    },
+                TextFormation = "фівіфлргфіл",
+                ExamlesTextId = 1,
                 TextExplanation = "aksdkhka usgufkask fgkagfk gaskgfkagfagkflas flaglfiadsadsad lsgfaasdsadas",
                 isFavorite = false
             };
 
+            SaveExampeAsync(example);
+
             SavePersonAsync(
                 item1
             );
+
+
         }
 
         public async Task<List<ExamleModel>> GetExamleModel(int Id)
         {
             return await database.Table<ExamleModel>().
-                Where(i => i.ItemID == Id).
-                ToListAsync();
+                        Where(i => i.ItemID == Id).
+                        ToListAsync();
         }
 
         public async Task<List<Item>> GetAllItemAsync(int number)
@@ -87,6 +74,11 @@ namespace Japanese.Data
         }
 
         public Task<int> SavePersonAsync(Item item)
+        {
+            return database.InsertAsync(item);
+        }
+
+        public Task<int> SaveExampeAsync(ExamleModel item)
         {
             return database.InsertAsync(item);
         }

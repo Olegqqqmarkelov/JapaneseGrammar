@@ -28,7 +28,9 @@ namespace Japanese.Views
         public async void GetExa(int ID)
         {
             base.OnAppearing();
-            itemsExampleList.ItemsSource = await App.Database.GetExamleModel(ID);
+            List<ExamleModel> model = await App.Database.GetExamleModel(ID);
+
+            itemsExampleList.ItemsSource = model;
         }
     }
 }

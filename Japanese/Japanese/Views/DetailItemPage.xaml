@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Japanese.Views.DetailItemPage"
              BackgroundColor="#363636">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_favorite40">
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Frame
@@ -11,7 +17,7 @@
                 IsClippedToBounds="True"
                 BackgroundColor="#505050" Margin="30, 25, 30, 25">
                 <StackLayout Margin="0,0,0,0">
-                    <Label Text="Формування:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
+                    <Label Text="Формування:" x:Name="Formuvana" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
                     <Label x:Name="TextFormation" HorizontalOptions="Start" VerticalOptions="EndAndExpand"/>
                 </StackLayout>
             </Frame>
@@ -36,12 +42,12 @@
                 <StackLayout Margin="0,0,0,0">
                     <Label Text="Приклади:" FontSize="25" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold"/>
 
-                    <ListView x:Name="itemsExampleList" HeightRequest="180" ItemsSource="{Binding ExamleModel}">
+                    <ListView x:Name="itemsExampleList" ItemsSource="{Binding}"
+                              SelectionMode="None" HasUnevenRows="true">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Orientation="Vertical"
-                                        >
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                                         <Label Text="{Binding TextRomace}" FontSize="12" />
                                         <Label Text="{Binding TextJapanese}" FontSize="12" />
                                         <Label Text="{Binding TextTranslate}" FontSize="12" />

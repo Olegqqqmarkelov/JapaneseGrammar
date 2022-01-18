@@ -7,7 +7,7 @@
              Title="Про програму">
 
     <StackLayout VerticalOptions="Center">
-        <Label Text="Версія: beta0.04"
+        <Label Text="Версія: beta0.06"
            HorizontalOptions="Center"/>
         <Label Text="Розробник: Oleh Markelov"
                HorizontalOptions="Center"/>
