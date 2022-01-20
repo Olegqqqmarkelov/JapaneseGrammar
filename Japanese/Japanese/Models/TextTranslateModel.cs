@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Japanese.Models
 {
-    public class TextFormatiom
+    public class TextTranslateModel
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
@@ -14,6 +14,6 @@ namespace Japanese.Models
         public string TextEngl { get; set; }
         public string TextPl { get; set; }
 
-        public int IdItem { get; set; }
+        public int IdExample { get; set; }
     }
 }

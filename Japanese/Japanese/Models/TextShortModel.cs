@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Japanese.Models
 {
-    public class TextFormatiom
+    public class TextShortModel
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

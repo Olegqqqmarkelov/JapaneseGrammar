@@ -15,40 +15,19 @@ namespace Japanese.Data
             database = new SQLiteAsyncConnection(connectionString);
 
             database.CreateTableAsync<ExamleModel>().Wait();
+            database.CreateTableAsync<SettingModel>().Wait();
+            database.CreateTableAsync<TextExplanationModel>().Wait();
+            database.CreateTableAsync<TextFormatiom>().Wait();
+            database.CreateTableAsync<TextShortModel>().Wait();
+            database.CreateTableAsync<TextShortModel>().Wait();
             database.CreateTableAsync<Item>().Wait();
 
+            //DelleteAll();
             //CreateTable();
         }
 
         public void CreateTable()
         {
-
-            ExamleModel example = new ExamleModel()
-            {
-
-                TextRomace = "asdsadsa",
-                TextJapanese = "asdasdsa",
-                TextTranslate = "asdasdas",
-                ItemID = 1
-            };
-
-            Item item1 = new Item()
-            {
-                Jplt = 1,
-                TextJapanese = "12",
-                ShortText = "asdas",
-                TextFormation = "фівіфлргфіл",
-                ExamlesTextId = 1,
-                TextExplanation = "aksdkhka usgufkask fgkagfk gaskgfkagfagkflas flaglfiadsadsad lsgfaasdsadas",
-                isFavorite = false
-            };
-
-            SaveExampeAsync(example);
-
-            SavePersonAsync(
-                item1
-            );
-
 
         }
 
@@ -57,6 +36,12 @@ namespace Japanese.Data
             return await database.Table<ExamleModel>().
                         Where(i => i.ItemID == Id).
                         ToListAsync();
+        }
+        
+        public async Task<int> DelleteAll()
+        {
+            await database.DeleteAllAsync<ExamleModel>();
+            return await database.DeleteAllAsync<Item>();
         }
 
         public async Task<List<Item>> GetAllItemAsync(int number)
@@ -73,14 +58,16 @@ namespace Japanese.Data
                                 FirstOrDefaultAsync();
         }
 
-        public Task<int> SavePersonAsync(Item item)
+        public Task<int> SaveAsync(Item item, ExamleModel examle, TextShortModel textShort
+                                    ,TextFormatiom textFormatiom, TextTranslateModel textTranslate
+                                    ,TextExplanationModel textExplanation)
         {
-            return database.InsertAsync(item);
-        }
-
-        public Task<int> SaveExampeAsync(ExamleModel item)
-        {
-            return database.InsertAsync(item);
+            database.InsertAsync(item);
+            database.InsertAsync(examle);
+            database.InsertAsync(textShort);
+            database.InsertAsync(textFormatiom);
+            database.InsertAsync(textTranslate);
+            return database.InsertAsync(textExplanation);
         }
 
 
