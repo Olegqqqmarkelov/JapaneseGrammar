@@ -19,17 +19,13 @@ namespace Japanese.Data
             database.CreateTableAsync<TextExplanationModel>().Wait();
             database.CreateTableAsync<TextFormatiom>().Wait();
             database.CreateTableAsync<TextShortModel>().Wait();
-            database.CreateTableAsync<TextShortModel>().Wait();
+            database.CreateTableAsync<TextTranslateModel>().Wait();
             database.CreateTableAsync<Item>().Wait();
 
             //DelleteAll();
             //CreateTable();
         }
 
-        public void CreateTable()
-        {
-
-        }
 
         public async Task<List<ExamleModel>> GetExamleModel(int Id)
         {

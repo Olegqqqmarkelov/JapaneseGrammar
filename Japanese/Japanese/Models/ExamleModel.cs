@@ -14,7 +14,6 @@ namespace Japanese.Models
         public string TextKana { get; set; }
         public string TextJapanese { get; set; }
 
-
         public int ItemID { get; set; }
     }
 }
