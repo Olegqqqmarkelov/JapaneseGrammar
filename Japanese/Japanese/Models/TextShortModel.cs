@@ -14,6 +14,7 @@ namespace Japanese.Models
         public string TextEngl { get; set; }
         public string TextPl { get; set; }
 
+        public int JlPT { get; set; }
         public int IdItem { get; set; }
     }
 }
