@@ -7,7 +7,6 @@ namespace Japanese.Models
 {
     public class TextShortModel
     {
-        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string TextUa { get; set; }
         public string TextRu { get; set; }

@@ -11,7 +11,7 @@ namespace Japanese
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "items.db";
+        public const string DATABASE_NAME = "items22.db";
         public static Database database;
         public static Database Database
         {

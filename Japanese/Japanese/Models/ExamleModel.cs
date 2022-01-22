@@ -8,7 +8,6 @@ namespace Japanese.Models
 {
     public class ExamleModel
     {
-        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string TextRomace { get; set; }
         public string TextKana { get; set; }

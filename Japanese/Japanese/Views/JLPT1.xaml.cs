@@ -29,6 +29,7 @@ namespace Japanese.Views
         {
             InitializeComponent();
 
+
         }
 
         protected override async void OnAppearing()
@@ -37,9 +38,9 @@ namespace Japanese.Views
 
             List<ViewModel1> viewModels = new List<ViewModel1>();
 
-            List<Item> items = await App.Database.GetAllItemAsync(1);
+            List<Item> items = await App.Database.GetAllItemAsync(5);
             List<TextShortModel> textShorts = await App.Database.GetTextShortModels(5);
-            SettingModel setting = await App.Database.GetSettingModel();
+            SettingModel setting = await App.Database.GetSettingModel(100);
 
             foreach (var item1 in items)
             {
@@ -84,11 +85,11 @@ namespace Japanese.Views
             itemsList.ItemsSource = viewModels;
         }
 
-        private async void OnSelectedItem(object sender, SelectedItemChangedEventArgs e)
+        /*private async void OnSelectedItem(object sender, SelectedItemChangedEventArgs e)
         {
             Item item = (Item)e.SelectedItem;
 
             Navigation.PushAsync(new DetailItemPage(item));
-        }
+        }*/
     }
 }

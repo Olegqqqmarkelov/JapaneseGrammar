@@ -10,7 +10,7 @@
             IsClippedToBounds="True"
             BackgroundColor="#505050" Margin="30, 25, 30, 25">
             <ListView x:Name="itemsList" HasUnevenRows="True" SeparatorVisibility="None" Margin="-20,-25,-20,-25" ItemsSource="{Binding}"
-                      SelectionMode="Single" ItemSelected="OnSelectedItem">
+                      SelectionMode="Single">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

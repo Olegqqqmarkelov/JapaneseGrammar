@@ -13,7 +13,10 @@ namespace Japanese.Data
 
         public Database(string connectionString)
         {
+
             database = new SQLiteAsyncConnection(connectionString);
+
+            DelleteAll();
 
             database.CreateTableAsync<ExamleModel>().Wait();
             database.CreateTableAsync<SettingModel>().Wait();
@@ -23,10 +26,21 @@ namespace Japanese.Data
             database.CreateTableAsync<TextTranslateModel>().Wait();
             database.CreateTableAsync<Item>().Wait();
 
-            //DelleteAll();
             CreateData();
         }
 
+        public void CreateSetting()
+        {
+            SettingModel settingModel = new SettingModel()
+            {
+                ID = 100,
+                Kana = true,
+                Language = 0,
+
+                Name = "0"
+            };
+            SaveSetting(settingModel);
+        }
 
         public async Task<List<ExamleModel>> GetExamleModel(int Id)
         {
@@ -35,16 +49,20 @@ namespace Japanese.Data
                         ToListAsync();
         }
 
-        public async Task<SettingModel> GetSettingModel()
+        public async Task<SettingModel> GetSettingModel(int id)
         {
             return await database.Table<SettingModel>().
-                        Where(i => i.ID == 0).
+                        Where(i => i.ID == id).
                         FirstOrDefaultAsync();
         }
         
         public async Task<int> DelleteAll()
         {
             await database.DeleteAllAsync<ExamleModel>();
+            await database.DeleteAllAsync<TextExplanationModel>();
+            await database.DeleteAllAsync<TextFormatiom>();
+            await database.DeleteAllAsync<TextShortModel>();
+            await database.DeleteAllAsync<TextTranslateModel>();
             return await database.DeleteAllAsync<Item>();
         }
 
@@ -122,7 +140,10 @@ namespace Japanese.Data
             return database.InsertAsync(textExplanation);
         }
 
-
+        public Task<int> SaveSetting(SettingModel setting)
+        {
+            return database.InsertAsync(setting);
+        }
 
         public void CreateData()
         {
@@ -206,7 +227,7 @@ namespace Japanese.Data
                 }
             };
 
-            database.SaveAsync(item_1, examleModels_1, textShort_1, textFormat_1, textTranslate_1, explanation_1);
+            SaveAsync(item_1, examleModels_1, textShort_1, textFormat_1, textTranslate_1, explanation_1);
         }
 
     }
